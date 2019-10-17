@@ -30,7 +30,7 @@ import static org.apache.qpid.proton.engine.impl.ByteBufferUtils.pourAll;
 public class WebSocketImpl implements WebSocket, TransportLayer {
     private static final Logger TRACE_LOGGER = LoggerFactory.getLogger(WebSocketImpl.class);
 
-    private final int maxFrameSize = (4 * 1024) + (16 * WebSocketHeader.MED_HEADER_LENGTH_MASKED);
+    private final int maxFrameSize = (1024 * 1024) + (16 * WebSocketHeader.MED_HEADER_LENGTH_MASKED);
     private boolean tailClosed = false;
     private final ByteBuffer inputBuffer;
     private boolean headClosed = false;
